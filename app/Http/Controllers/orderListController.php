@@ -6,16 +6,41 @@ use Illuminate\Http\Request;
 use Illuminate\support\facades\DB;
 use App\Models\listorder;
 use App\Models\Resource;
+use Dompdf\Dompdf;
 
 class orderListController extends Controller
 {
     public function index()
     {
+        $orderList = DB::table('orderlist')->get();
+        return view('orderlist.index', ['orderList' => $orderList]);
 
-        $listorders = listorder::orderBy('date_order', 'desc')->paginate(10);
-        $total_orders = listorder::count();
+    }
 
-        return view('orderlist.index', compact('listorders', 'total_orders'));
+    public function print()
+    {
+        $orderList = DB::table('orderlist')->get();
+        return view('orderlist.print', ['orderList' => $orderList]);
+
+    }
+
+    public function printpdf()
+    {
+        $orderList = DB::table('orderlist')->get();
+        $html = view('orderlist.printpdf', ['orderList' => $orderList]);
+
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
 
     }
 

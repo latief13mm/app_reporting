@@ -67,7 +67,9 @@
                 </div>
                 <div class="card-header-right"> 
                     {{-- <a href="{{'income/create' }}" class="btn btn-success btn-round">Add Income</a> --}}
-                    <a href="{{'daterange' }}" class="btn btn-info btn-round">Date Range Filter</a>
+                    {{-- <a href="{{'daterange' }}" class="btn btn-info btn-round">Date Range Filter</a> --}}
+                    <a href="/orderlist/print" target="_blank" class="btn btn-info btn-round">Print to Printer</a>
+                    <a href="/orderlist/printpdf" target="_blank" class="btn btn-success btn-round">Print to Pdf</a>
                     {{-- <ul class="list-unstyled card-option">     
                         <li><i class="icofont icofont-simple-left "></i></li>        
                         <li><i class="icofont icofont-maximize full-card"></i></li>        
@@ -83,21 +85,19 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
-                                <th class="">Date Order</th>
-                                <th class="">Product Name</th>
-                                <th class="">Resource Income</th>
+                                <th class="">Id Checkout</th>
+                                <th class="">Jumlah</th>
                                 <th class="">Total</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($listorders as $key =>  $data)
+                            @foreach($orderList as $key => $data)
                             <tr>
-                                <th class="text-center" scope="row">{{ $listorders->firstItem() + $key }}</th>
-                                <td>{{ $data->date_order }}</td>
-                                <td>{{ $data->name_product }}</td>
-                                <td>{{ $data->resources->name_resource }}</td>
-                                <td>Rp. {{ $data->total }}</td>
+                                <th class="text-center" scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $data->id_checkout }}</td>
+                                <td>{{ $data->jumlah }}</td>
+                                <td>Rp. {{ $data->Total }}</td>
                                 <td class="text-center">
                                     <a href="{{ url('orderlist/'.$data->id) }}" class="btn btn-warning btn-outline-warning">
                                         <i class="ti-eye"></i>
@@ -117,9 +117,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="pagination">
-                        {{ $listorders->links() }}
-                    </div>
                 </div>
             </div>
         </div>

@@ -66,8 +66,8 @@
                     @endif
                 </div>
                 <div class="card-header-right"> 
-                    <a href="{{'income/create' }}" class="btn btn-success btn-round">Add Income</a>
-                    <a href="{{'daterange' }}" class="btn btn-info btn-round">Date Range Filter</a>
+                    {{-- <a href="{{'income/create' }}" class="btn btn-success btn-round">Add Income</a>
+                    <a href="{{'daterange' }}" class="btn btn-info btn-round">Date Range Filter</a> --}}
                     {{-- <ul class="list-unstyled card-option">     
                         <li><i class="icofont icofont-simple-left "></i></li>        
                         <li><i class="icofont icofont-maximize full-card"></i></li>        

@@ -5,8 +5,8 @@
             <div class="main-menu-header">
                 <img class="img-40 img-radius" src="{{asset('front/assets/images/avatar-4.jpg')}}" alt="User-Profile-Image">
                 <div class="user-details">
-                    <span>John Doe</span>
-                    <span id="more-details">UX Designer<i class="ti-angle-down"></i></span>
+                    <span>Owner@gmail.com</span>
+                    <span id="more-details">Owner<i class="ti-angle-down"></i></span>
                 </div>
             </div>
 
@@ -38,13 +38,13 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{ url('/charts') }}">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>C</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Charts</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a href="{{ url('/income') }}">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>I</b></span>
@@ -66,13 +66,13 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="{{ url('/financial') }}">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FS</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Financial Statments</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </nav>

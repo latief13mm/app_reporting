@@ -48,7 +48,9 @@ Route::group(['middleware' => ['auth']], function (){
         // resource untuk income dan spending
         Route::resource('income', 'IncomeController');
         Route::resource('spending', 'SpendingController');
-        Route::resource('orderlist', 'orderListController');
+        Route::get('/orderlist', [orderListController::class,'index']);
+
+        // Route::resource('orderlist', 'orderListController');
         //end income,spending, orderlist 
 
         // searching dan pagination 
@@ -60,6 +62,8 @@ Route::group(['middleware' => ['auth']], function (){
         //untuk range data 
         Route::get('/daterange', [DateRangeController::class,'index']);
         Route::post('/daterange', [DateRangeController::class,'fetch_data'])->name('income.date_range.fetch_data');
+
+        
         Route::get('/datespending', [DateSpendingController::class,'index']);
         Route::post('/datespending', [DateSpendingController::class,'fetch_data'])->name('spending.date_range.fetch_data');
         //end range
@@ -84,8 +88,11 @@ Route::group(['middleware' => ['auth']], function (){
          // resource untuk income dan spending
         Route::resource('income', 'IncomeController');
         Route::resource('spending', 'SpendingController');
-        Route::resource('orderlist', 'orderListController');
-         //end income, spending, order list
+        Route::get('/orderlist', [orderListController::class,'index']);
+        Route::get('/orderlist/print', [orderListController::class,'print']);
+        Route::get('/orderlist/printpdf', [orderListController::class,'printpdf']);
+        // Route::resource('orderlist', 'orderListController');
+        //end income, spending, order list
 
         //seaching 
         Route::get('/searchSpending', [SpendingController::class, 'searchSpending'])->name('searchSpending');
@@ -96,6 +103,8 @@ Route::group(['middleware' => ['auth']], function (){
         //untuk range data 
         Route::get('/daterange', [DateRangeController::class,'index']);
         Route::post('/daterange', [DateRangeController::class,'fetch_data'])->name('income.date_range.fetch_data');
+
+
         Route::get('/datespending', [DateSpendingController::class,'index']);
         Route::post('/datespending', [DateSpendingController::class,'fetch_data'])->name('spending.date_range.fetch_data');
         //end range

@@ -64,7 +64,7 @@
                 </div>
                 <div class="card-header-right"> 
                     <a href="{{'spending/create' }}" class="btn btn-success btn-round">Add Cost</a>
-                    <a href="{{'datespending' }}" class="btn btn-info btn-round">Date Range Filter</a>
+                    {{-- <a href="{{'datespending' }}" class="btn btn-info btn-round">Date Range Filter</a> --}}
                     {{-- <ul class="list-unstyled card-option">     
                         <li><i class="icofont icofont-simple-left "></i></li>        
                         <li><i class="icofont icofont-maximize full-card"></i></li>        

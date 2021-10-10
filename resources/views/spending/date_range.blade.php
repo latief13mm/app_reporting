@@ -26,7 +26,7 @@
       <div class="col-md-2">
        <button type="button" name="filter" id="filter" class="btn btn-info btn-sm">Filter</button>
        <button type="button" name="refresh" id="refresh" class="btn btn-warning btn-sm">Refresh</button>
-       <a href="{{'/income' }}" class="btn btn-danger btn-sm">Back</a>
+       <a href="{{'/spending' }}" class="btn btn-danger btn-sm">Back</a>
       </div>
      </div>
     </div>
