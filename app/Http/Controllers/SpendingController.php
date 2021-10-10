@@ -22,8 +22,15 @@ class SpendingController extends Controller
 
         return view('spending.index', compact('spendings', 'total_spendings'));
 
+    }
+
+    public function print()
+    {
+        $spendings = DB::table('spendings')->get();
+        return view('spending.print', ['spendings' => $spendings]);
 
     }
+
     public function searchSpending(Request $request)
     {
         $keyword = $request->search;

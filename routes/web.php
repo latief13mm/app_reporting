@@ -45,11 +45,20 @@ Route::get('/logout',[AuthController::class,'logout']);
 Route::group(['middleware' => ['auth']], function (){
     Route::group(['middleware' => ['cek_login:admin']], function (){
         Route::get('/home',[HomeController::class,'index']);
-        // resource untuk income dan spending
-        Route::resource('income', 'IncomeController');
-        Route::resource('spending', 'SpendingController');
-        Route::get('/orderlist', [orderListController::class,'index']);
 
+        // resource untuk income
+        Route::get('/income', [IncomeController::class,'index']);
+        Route::get('/income/print', [IncomeController::class,'print']);
+         
+        //resource untuk spending
+        Route::get('/spending', [SpendingController::class,'index']);
+        Route::get('/spending/print', [SpendingController::class,'print']);
+
+        //untuk orderlist
+        Route::get('/orderlist', [orderListController::class,'index']);
+        Route::get('/orderlist/print', [orderListController::class,'print']);
+        Route::get('/orderlist/printpdf', [orderListController::class,'printpdf']);
+        //akhir orderlist
         // Route::resource('orderlist', 'orderListController');
         //end income,spending, orderlist 
 
@@ -85,12 +94,19 @@ Route::group(['middleware' => ['auth']], function (){
         Route::delete('/admin/{id}',[AdminController::class,'delete']);
         //end admin
 
-         // resource untuk income dan spending
-        Route::resource('income', 'IncomeController');
-        Route::resource('spending', 'SpendingController');
+         // resource untuk income
+        Route::get('/income', [IncomeController::class,'index']);
+        Route::get('/income/print', [IncomeController::class,'print']);
+
+        //resource untuk spending
+        Route::get('/spending', [SpendingController::class,'index']);
+        Route::get('/spending/print', [SpendingController::class,'print']);
+
+        //untuk orderlist
         Route::get('/orderlist', [orderListController::class,'index']);
         Route::get('/orderlist/print', [orderListController::class,'print']);
         Route::get('/orderlist/printpdf', [orderListController::class,'printpdf']);
+        //akhir orderlist
         // Route::resource('orderlist', 'orderListController');
         //end income, spending, order list
 

@@ -25,6 +25,14 @@ class IncomeController extends Controller
 
     }
 
+    public function print()
+    {
+        $incomes = DB::table('incomes')->get();
+        return view('income.print', ['incomes' => $incomes]);
+
+    }
+
+
     public function searchIncome(Request $request)
     {
         $sort = $request->search;

@@ -64,6 +64,7 @@
                 </div>
                 <div class="card-header-right"> 
                     <a href="{{'spending/create' }}" class="btn btn-success btn-round">Add Cost</a>
+                    <a href="/spending/print" target="_blank" class="btn btn-info btn-round">Print to Printer</a>
                     {{-- <a href="{{'datespending' }}" class="btn btn-info btn-round">Date Range Filter</a> --}}
                     {{-- <ul class="list-unstyled card-option">     
                         <li><i class="icofont icofont-simple-left "></i></li>        
